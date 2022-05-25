@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Roll a dice
+     * Roll a dice, update the screen
      */
     private fun rollDice() {
         // Create a six-side dice
@@ -39,6 +39,6 @@ class Dice(private val numSides: Int) {
 
     // Return a random number
     fun roll(): Int {
-        return(1..numSides).random()
+        return (1..numSides).random()
     }
 }
