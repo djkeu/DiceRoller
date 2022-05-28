@@ -23,14 +23,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Roll a dice, update the screen
+     * Roll the dice, update the screen
      */
     private fun rollDice() {
+        // Create and roll a six sided dice
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
+        // Find the imageView in the layout
         val diceImage: ImageView = findViewById(R.id.imageView)
 
+        // Determine which dice image to use according to dice roll
         val drawableResource = when (diceRoll) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
@@ -40,7 +43,11 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
+        // Update the imageView with the correct drawalbe resource ID
         diceImage.setImageResource(drawableResource)
+
+        // Update the content description
+        diceImage.contentDescription = diceRoll.toString()
     }
 }
 
